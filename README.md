@@ -1,2 +1,5 @@
-# dotfiles.nix
-Nix and NixOS dotfiles
+# Nix and NixOS dotfiles
+
+My Nix and NixOS configurations
+
+
