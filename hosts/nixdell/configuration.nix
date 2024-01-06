@@ -15,6 +15,7 @@ in
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./packages.nix
       nixvim.nixosModules.nixvim
     ];
 
@@ -158,89 +159,7 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    aircrack-ng
-    alacritty
-    ansible
-    ansible-lint
-    arandr
-    blender
-    brave
-    barrier
-    bun
-    bruno
-    claws
-    cobra-cli
-    dbeaver
-    dig
-    direnv
-    discord
-    docker-compose
-    doctl
-    evince
-    feh
-    firefox
-    fractal
-    gimp	
-    git
-    gh
-    go
-    go-swagger
-    google-chrome
-    ghostscript
-    helix
-    inetutils
-    insomnia
-    just
-    kubectl
-    libreoffice-fresh
-    logseq
-    mongodb-compass
-    neofetch
-    networkmanagerapplet
-    nmap
-    nodejs
-    nodePackages_latest.live-server
-    nodePackages_latest.vercel
-    nodePackages_latest.ts-node
-    npm-check-updates
-    nss
-    nssTools
-    obsidian
-    openssl
-    p7zip
-    php81
-    pdfsam-basic
-    powershell
-    python3Full
-    ranger
-    rofi
-    robo3t
-    rstudio
-    simple-scan
-    starship
-    synergy
-    unzip
-    unrar
-    virt-manager
-    vlc
-    vscode
-    vscodium
-    xfce.thunar
-    xorg.xrandr
-    zotero
-    teams-for-linux
-    terraform
-    xsel
-    xorg.xhost
-    wireshark
-    wrk
-    zoom-us
-    cargo
-    rustc
-  ];
-
-
+  
 #  environment.systemPackages = with pkgs; [
 #    (vscode-with-extensions.override {
 #      vscodeExtensions = with vscode-extensions; [
