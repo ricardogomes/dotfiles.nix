@@ -17,6 +17,7 @@
       ../../modules/system/xserver.nix
       ../../modules/system/printing.nix
       ../../modules/system/sound.nix
+      ../../modules/virtualization
     ];
 
  
@@ -77,10 +78,6 @@
 
 
   system.stateVersion = "23.11"; # Did you read the comment?
-  virtualisation.docker = {
-    enable = true;
-    extraOptions = "--default-address-pool base=10.10.0.0/16,size=24";
-  };
-  virtualisation.libvirtd.enable = true;
+  
   programs.dconf.enable = true;
 }
