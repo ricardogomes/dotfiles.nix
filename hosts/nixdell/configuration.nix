@@ -13,72 +13,17 @@
       ../../modules/system/nixos.nix
       ../../modules/system/boot.nix
       ../../modules/system/networking.nix
+      ../../modules/system/locale.nix
+      ../../modules/system/xserver.nix
     ];
 
   
   
-    # Set your time zone.
-  time.timeZone = "Europe/Lisbon";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_PT.UTF-8";
-    LC_IDENTIFICATION = "pt_PT.UTF-8";
-    LC_MEASUREMENT = "pt_PT.UTF-8";
-    LC_MONETARY = "pt_PT.UTF-8";
-    LC_NAME = "pt_PT.UTF-8";
-    LC_NUMERIC = "pt_PT.UTF-8";
-    LC_PAPER = "pt_PT.UTF-8";
-    LC_TELEPHONE = "pt_PT.UTF-8";
-    LC_TIME = "pt_PT.UTF-8";
-  };
-
+  
 	
-  environment.pathsToLink = [ "/libexec" ];
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
 
-    desktopManager = {
-      lxqt.enable = true;
-      xterm.enable = true;
-    };
+  
 
-    displayManager = {
-      lightdm.enable = true;
-      defaultSession = "none+i3";
-      setupCommands = ''
-        ${pkgs.xorg.xhost}/bin/xhost +SI:localuser:root
-        ${pkgs.xorg.xhost}/bin/xhost +SI:localuser:rg
-      '';
-    };
-    libinput.touchpad.disableWhileTyping = true;
-    windowManager.i3  = {
-      enable = true;
-      package = pkgs.i3-gaps;
-      extraPackages = with pkgs; [
-        dmenu #application launcher most people use
-        #i3status # gives you the default i3 status bar
-        i3lock #default i3 screen locker
-        i3blocks #if you are planning on using i3blocks over i3status
-     ];
-    };
-  };
-
-  # Enable the LXQT Desktop Environment
-  #services.xserver.displayManager.lightdm.enable = true;
-  #services.xserver.desktopManager.lxqt.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "pt";
-    xkbVariant = "";
-  };
-
-  # Configure console keymap
-  console.keyMap = "pt-latin1";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

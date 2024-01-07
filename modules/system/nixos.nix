@@ -6,4 +6,7 @@
 		auto-optimise-store = true;
 	};
 
+	environment = {
+		pathsToLink = [ "/libexec" ];
+	};
 }
