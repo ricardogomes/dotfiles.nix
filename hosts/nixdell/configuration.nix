@@ -16,7 +16,7 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
-      nixvim.nixosModules.nixvim
+#      nixvim.nixosModules.nixvim
     ];
 
   nix.settings.auto-optimise-store = true;
@@ -205,12 +205,12 @@ in
     '';
   };
 
-  programs.nixvim = {
-    enable = true;
+#  programs.nixvim = {
+#    enable = true;
 
-    colorschemes.catppuccin.enable = true;
+#    colorschemes.catppuccin.enable = true;
     #plugins.lightline.enable = true;
-  };
+#  };
 
 
   # Some programs need SUID wrappers, can be configured further or are
