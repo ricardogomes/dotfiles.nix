@@ -11,13 +11,11 @@
       ./hardware-configuration.nix
       ./packages.nix
       ../../modules/system/nixos.nix
+      ../../modules/system/boot.nix
     ];
 
   
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
+  
   networking.hostName = "nixdell"; # Define your hostname.
   networking.extraHosts =
   ''
