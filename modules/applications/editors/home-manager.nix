@@ -10,9 +10,14 @@
 			vimdiffAlias = true;
 
 			extraConfig = ''
-			:luafile ~/.config/nvim/lua/init.lua
+			lua << EOF
+			      ${builtins.readFile ./nvim/init.lua}
+		    EOF
 			'';
 		};	
 	};
 
 }
+
+
+
