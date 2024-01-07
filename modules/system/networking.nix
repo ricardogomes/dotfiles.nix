@@ -4,7 +4,6 @@
 
 	networking = {
 		hostName = host.hostName;
-		useDHCP = true;
 		extraHosts = 
 		''
 			192.168.1.254 meo.local
