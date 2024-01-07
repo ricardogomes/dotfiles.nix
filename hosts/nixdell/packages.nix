@@ -39,7 +39,6 @@
 		go-swagger
 		google-chrome 
 		ghostscript
-		helix
 		inetutils
 		insomnia
 		just
@@ -50,7 +49,6 @@
 		neofetch
 		networkmanagerapplet
 		nmap
-		neovim
 		nodejs
 		nodePackages_latest.live-server
 		nodePackages_latest.vercel
@@ -76,8 +74,6 @@
 		unrar
 		virt-manager
 		vlc
-		vscode
-		vscodium
 		xfce.thunar
 		xorg.xrandr
 		zotero

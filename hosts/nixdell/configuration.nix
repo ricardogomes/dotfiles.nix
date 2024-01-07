@@ -19,6 +19,7 @@
       ../../modules/system/sound.nix
       ../../modules/system/user.nix
       ../../modules/virtualization
+      ../../modules/applications/editors/configuration.nix
     ];
 
   programs.bash.interactiveShellInit = ''eval "$(direnv hook bash)"'';
