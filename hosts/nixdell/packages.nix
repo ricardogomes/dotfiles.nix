@@ -1,6 +1,14 @@
 {config, pkgs, ... }:
 
 {
+	# Allow unfree packages
+	nixpkgs.config = {
+		allowUnfree = true;
+		permittedInsecurePackages = [
+	    	"electron-25.9.0"
+		];
+	};
+
 	environment.systemPackages = with pkgs; [
 		aircrack-ng
 		alacritty
@@ -82,5 +90,8 @@
 		cargo
 		rustc
 	];
+
+
+
 
 }

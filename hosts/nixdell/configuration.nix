@@ -19,7 +19,8 @@ in
       nixvim.nixosModules.nixvim
     ];
 
-    
+  nix.settings.auto-optimise-store = true;
+  
 
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -149,13 +150,7 @@ in
   };
 
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-24.8.6"
-    "electron-25.9.0"
-    "zotero-6.0.27"
-  ];
+  
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
