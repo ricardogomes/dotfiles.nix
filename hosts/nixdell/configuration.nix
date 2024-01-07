@@ -3,28 +3,17 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, callPackage, ... }:
-let
-  nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-    # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-    # ref = "nixos-23.05";
-  });
-in
+
 {
 
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
-#      nixvim.nixosModules.nixvim
+      ../../modules/system/nixos.nix
     ];
 
-  nix.settings.auto-optimise-store = true;
   
-
-  # Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
