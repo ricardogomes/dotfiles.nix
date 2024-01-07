@@ -11,6 +11,7 @@
 		};
 		home-manager = {
 			url = "github:nix-community/home-manager";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
 
@@ -18,7 +19,7 @@
 		nixosConfigurations = {
 			nixdell = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
-
+				specialArgs = inputs;
 				modules = [
 					./hosts/nixdell/configuration.nix
 				];
