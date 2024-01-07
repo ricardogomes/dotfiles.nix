@@ -12,29 +12,12 @@
       ./packages.nix
       ../../modules/system/nixos.nix
       ../../modules/system/boot.nix
+      ../../modules/system/networking.nix
     ];
 
   
   
-  networking.hostName = "nixdell"; # Define your hostname.
-  networking.extraHosts =
-  ''
-    192.168.1.254 meo.local
-    192.168.0.1 dlink1.local
-  '';
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Enable network manager applet
-  programs.nm-applet.enable = true;
-
-  # Set your time zone.
+    # Set your time zone.
   time.timeZone = "Europe/Lisbon";
 
   # Select internationalisation properties.

@@ -19,7 +19,14 @@
 		nixosConfigurations = {
 			nixdell = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
-				specialArgs = inputs;
+				specialArgs = {
+					inherit inputs;
+					host = {
+						hostName = "nixdell";
+						mainMonitor = "eDP-1";
+						secondMonitor = "HDMI-2";
+					};
+				};
 				modules = [
 					./hosts/nixdell/configuration.nix
 				];
