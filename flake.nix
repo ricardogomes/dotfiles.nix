@@ -15,7 +15,7 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, ...}@inputs: 
+	outputs = { self, nixpkgs, home-manager, ...}@inputs: 
 		let
 			vars = {
 				user = "rg";
@@ -25,11 +25,13 @@
 				terminal = "alacritty";
 				editor = "nvim";
 			};
+			system = "x86_64-linux";
+			pkgs = nixpkgs.legacyPackages.${system};
 		in
 		{
 			nixosConfigurations = {
 				nixdell = nixpkgs.lib.nixosSystem {
-					system = "x86_64-linux";
+					inherit system;
 					specialArgs = {
 						inherit inputs vars;
 						host = {
@@ -40,6 +42,17 @@
 					};
 					modules = [
 						./hosts/nixdell/configuration.nix
+					];
+				};
+			};
+			homeConfigurations = {
+				${vars.user} = home-manager.lib.homeManagerConfiguration {
+					inherit pkgs; 
+					extraSpecialArgs = {
+						inherit	vars;
+					};
+					modules = [
+						./modules/home-manager
 					];
 				};
 			};
