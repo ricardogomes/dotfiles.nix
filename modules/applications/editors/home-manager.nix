@@ -8,13 +8,12 @@
 			viAlias = true;
 			vimAlias = true;
 			vimdiffAlias = true;
-
-			extraConfig = ''
-			lua << EOF
-			      ${builtins.readFile ./nvim/init.lua}
-		    EOF
-			'';
 		};	
+	};
+
+	home.file = {
+		".config/nvim/init.lua".source = ./nvim/init.lua
+	
 	};
 
 }
