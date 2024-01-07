@@ -15,24 +15,35 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, ...}@inputs: {
-		nixosConfigurations = {
-			nixdell = nixpkgs.lib.nixosSystem {
-				system = "x86_64-linux";
-				specialArgs = {
-					inherit inputs;
-					host = {
-						hostName = "nixdell";
-						mainMonitor = "eDP-1";
-						secondMonitor = "HDMI-2";
+	outputs = { self, nixpkgs, ...}@inputs: 
+		let
+			vars = {
+				user = "rg";
+				username = "Ricardo Gomes";
+				useremail = "mail@ricardogomes.me";
+				dotfiles = "~/Development/github/ricardogomes/dofiles.nix";
+				terminal = "alacritty";
+				editor = "nvim";
+			};
+		in
+		{
+			nixosConfigurations = {
+				nixdell = nixpkgs.lib.nixosSystem {
+					system = "x86_64-linux";
+					specialArgs = {
+						inherit inputs vars;
+						host = {
+							hostName = "nixdell";
+							mainMonitor = "eDP-1";
+							secondMonitor = "HDMI-2";
+						};
 					};
+					modules = [
+						./hosts/nixdell/configuration.nix
+					];
 				};
-				modules = [
-					./hosts/nixdell/configuration.nix
-				];
 			};
 		};
-	};
 }
 
 

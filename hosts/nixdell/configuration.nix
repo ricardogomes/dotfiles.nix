@@ -17,30 +17,9 @@
       ../../modules/system/xserver.nix
       ../../modules/system/printing.nix
       ../../modules/system/sound.nix
+      ../../modules/system/user.nix
       ../../modules/virtualization
     ];
-
- 
-  
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rg = {
-    isNormalUser = true;
-    description = "Ricardo Gomes";
-    extraGroups = [ "networkmanager" "wheel" "docker" "scanner" "lp" "libvirtd"];
-    packages = with pkgs; [
-          #  thunderbird
-    ];
-  };
-
-
-  
-
- 
-
 
   programs.bash.interactiveShellInit = ''eval "$(direnv hook bash)"'';
 
