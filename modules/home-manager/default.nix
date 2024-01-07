@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, vars, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -18,6 +18,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+  	pkgs.htop
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -67,7 +68,8 @@
   #  /etc/profiles/per-user/rg/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = vars.editor;
+	TESTING = "TESTING HOME-MANAGER";
   };
 
   # Let Home Manager install and manage itself.

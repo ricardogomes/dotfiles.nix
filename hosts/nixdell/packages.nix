@@ -50,6 +50,7 @@
 		neofetch
 		networkmanagerapplet
 		nmap
+		neovim
 		nodejs
 		nodePackages_latest.live-server
 		nodePackages_latest.vercel
