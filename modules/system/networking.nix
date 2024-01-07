@@ -12,6 +12,10 @@
 		networkmanager = {
 			enable = true;
 		};
+		
+		firewall = {
+			allowedTCPPorts = [ 24800 24802 24804 ]; # Barrier
+		};
 	};
 	
 	programs.nm-applet = {
