@@ -18,6 +18,7 @@
       ../../modules/system/printing.nix
       ../../modules/system/sound.nix
       ../../modules/system/user.nix
+      ../../modules/system/fonts.nix
       ../../modules/virtualization
       ../../modules/applications/editors/configuration.nix
     ];
