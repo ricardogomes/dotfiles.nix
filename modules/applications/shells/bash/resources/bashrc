@@ -1,0 +1,22 @@
+# Starship Prompt
+eval "$(starship init bash)"
+
+# Laravel SAIL Bootstrap
+sail_bootstrap() (
+    docker run --rm \
+		-u "$(id -u):$(id -g)" \
+		-v "$(pwd):/var/www/html" \
+		-w /var/www/html \
+		laravelsail/php82-composer:latest \
+		 composer install --ignore-platform-reqs
+)
+
+###
+# BASH CONFIGURATIONS
+###
+
+HISTCONTROL=ignoredups		# Ignore sequential duplicates
+HISTSIZE= HISTFILESIZE= 	# Infinite history.
+shopt -s histappend		# Append instead of replacing
+shopt -s checkwinsize		# Check window size and redefine lines and columns if necessary
+shopt -s autocd 		#Allows you to cd into directory merely by typing the directory name.
