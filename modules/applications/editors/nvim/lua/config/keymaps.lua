@@ -5,7 +5,7 @@ local default_opts = {
 	silent = true,
 }
 
-vim.keymap.set("n","<leader>bn", "bnext")
+vim.keymap.set("n","<leader>bn", ":bnext<CR>")
 
 vim.keymap.set("n","<leader>m", ":NvimTreeFocus<CR>")
 vim.keymap.set("n","<leader>e", ":NvimTreeToggle<CR>")

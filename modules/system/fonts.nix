@@ -5,14 +5,17 @@
 	fonts = {
 		packages = with pkgs; [
 			(nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono"]; })
+			carlito
+			vegur
+		    source-code-pro
+		    jetbrains-mono
+		    font-awesome
 		];
 		fontconfig = {
 			defaultFonts = {
-				sansserif = [ "FiraCode" ];
+				sansSerif = [ "FiraCode" ];
 				monospace = [ "DroidSansMono" ];
 			};
 		};
-	}
-
-
+	};
 }
