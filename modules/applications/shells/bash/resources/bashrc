@@ -17,6 +17,6 @@ sail_bootstrap() (
 
 HISTCONTROL=ignoredups		# Ignore sequential duplicates
 HISTSIZE= HISTFILESIZE= 	# Infinite history.
-shopt -s histappend		# Append instead of replacing
+shopt -s histappend		    # Append instead of replacing
 shopt -s checkwinsize		# Check window size and redefine lines and columns if necessary
-shopt -s autocd 		#Allows you to cd into directory merely by typing the directory name.
+shopt -s autocd 		    #Allows you to cd into directory merely by typing the directory name.

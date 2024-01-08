@@ -1,12 +1,14 @@
 { config, pkgs, vars, ... }:
 let
-  bashrcConfig = builtins.readFile ./resources/bashrc;
+    bashrcConfig = builtins.readFile ./resources/bashrc;
+    aliases = import ../aliases.nix;
 in
 {
     programs = { 
   		bash = {
 			enable = true;
-			bashrcExtra = bashrcConfig
+			bashrcExtra = bashrcConfig;
+            shellAliases = aliases;
 	 	};
 	};
 }
