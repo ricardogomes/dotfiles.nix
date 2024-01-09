@@ -23,8 +23,6 @@
       ../../modules/applications/editors/configuration.nix
     ];
 
-  programs.bash.interactiveShellInit = ''eval "$(direnv hook bash)"'';
-
   programs.tmux = {
     enable = true;
     clock24 = true;

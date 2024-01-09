@@ -15,7 +15,6 @@
     "..."   = "cd ../..";
     "...."  = "cd ../../..";
     "....." = "cd ../../../..";
-    "--"    = "cd -";
     "sudo"  = "sudo ";
     "hosts" = "sudo $EDITOR /etc/hosts";
     "c"     = "clear";
