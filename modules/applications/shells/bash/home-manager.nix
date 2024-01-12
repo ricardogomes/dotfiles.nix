@@ -9,7 +9,7 @@ in
 			enable = true;
 			bashrcExtra = bashrcConfig;
             shellAliases = aliases;
-            interactiveShellInit = ''eval "$(direnv hook bash)"'';
+            initExtra = ''eval "$(direnv hook bash)"'';
 	 	};
 	};
 }
