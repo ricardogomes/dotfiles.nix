@@ -8,7 +8,7 @@
 	    xkbVariant = "";
 
     	desktopManager = {
-			lxqt.enable = true;
+			lxqt.enable = false;
 			xterm.enable = true;
     	};
 
