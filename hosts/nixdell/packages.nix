@@ -49,6 +49,7 @@
 		neofetch
 		networkmanagerapplet
 		nmap
+        nixpkgs-fmt
 		nodejs
 		nodePackages_latest.live-server
 		nodePackages_latest.vercel
