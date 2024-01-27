@@ -8,6 +8,9 @@
 	    	"electron-25.9.0"
 		];
 	};
+    
+
+
 
 	environment.systemPackages = with pkgs; [
 		aircrack-ng
@@ -64,6 +67,7 @@
 		pdfsam-basic
 		powershell
 		python3Full
+        pstree
 		ranger
 		rofi
 		robo3t

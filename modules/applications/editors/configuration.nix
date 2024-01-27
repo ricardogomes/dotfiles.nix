@@ -1,10 +1,30 @@
 { config, pkgs, vars, ... }:
 
 {
-	environment.systemPackages = with pkgs; [
-		helix
-		neovim
-		vscode
-		vscodium
-	];
+  environment.systemPackages = with pkgs; [
+    helix
+    neovim
+    vscode
+    vscodium
+    emacs
+    ripgrep
+    fd
+    imagemagick
+    zstd
+    sqlite
+    cmake
+    gnumake
+    nixfmt
+    shfmt
+    shellcheck
+    pandoc
+    emacsPackages.vterm
+    libgcc
+    gcc
+    libtool
+    libvterm
+    libsForQt5.okular
+  ];
+
+  services.emacs = { enable = true; };
 }
