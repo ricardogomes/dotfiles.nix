@@ -17,6 +17,7 @@
       ../../modules/system/xserver.nix
       ../../modules/system/printing.nix
       ../../modules/system/sound.nix
+      ../../modules/system/usb.nix
       ../../modules/system/user.nix
       ../../modules/system/fonts.nix
       ../../modules/virtualization
