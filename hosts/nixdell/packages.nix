@@ -69,6 +69,7 @@
 		python3Full
         pstree
 		ranger
+        remmina
 		rofi
 		robo3t
 		rstudio
@@ -79,11 +80,14 @@
 		unrar
 		virt-manager
 		vlc
+        ventoy
 		xfce.thunar
 		xorg.xrandr
 		zotero
 		teams-for-linux
 		terraform
+        udiskie
+        usermount
 		xsel
 		xorg.xhost
 		wireshark

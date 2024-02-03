@@ -18,6 +18,7 @@
 			setupCommands = ''
         		${pkgs.xorg.xhost}/bin/xhost +SI:localuser:root
 		        ${pkgs.xorg.xhost}/bin/xhost +SI:localuser:rg
+                export `dbus-launch`
 			'';
     	};
     

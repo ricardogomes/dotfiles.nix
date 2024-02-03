@@ -17,12 +17,23 @@
       ../../modules/system/xserver.nix
       ../../modules/system/printing.nix
       ../../modules/system/sound.nix
-      ../../modules/system/usb.nix
       ../../modules/system/user.nix
       ../../modules/system/fonts.nix
       ../../modules/virtualization
       ../../modules/applications/editors/configuration.nix
     ];
+
+  services.udisks2 = {
+      enable = true;
+  };
+
+  services.samba = {
+    enable = true;
+  };
+
+  services.gvfs = {
+    enable = true;
+  };
 
   programs.tmux = {
     enable = true;
