@@ -4,8 +4,10 @@
 
 	services.xserver = {
     	enable = true;
-		layout = "pt";
-	    xkbVariant = "";
+        xkb = {
+            layout = "pt";
+	        variant = "";
+        };	
 
     	desktopManager = {
 			lxqt.enable = false;
