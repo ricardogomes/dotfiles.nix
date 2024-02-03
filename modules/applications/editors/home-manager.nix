@@ -15,7 +15,9 @@
 	};
 
     services = {
-        emacs = enable;
+        emacs = {
+            enable = true;
+        };
     };
 
 	home.file = {
