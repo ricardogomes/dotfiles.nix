@@ -7,11 +7,15 @@
 (menu-bar-mode -1)
 (set-fringe-mode 10)
 
+(setq make-backup-files nil)
+(setq create-lockfiles nil)
+
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
 (package-initialize)
+
 (unless package-archive-contents
   (package-refresh-contents))
 (unless (package-installed-p 'use-package)
@@ -33,17 +37,33 @@
   (setq org-log-into-drawer t)
 
   (setq org-todo-keywords
-	'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-	  (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANCEL(k@)")))
-  
+        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+          (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANCEL(k@)")))
+
+  (setq org-todo-keyword-faces
+        '(("TODO" . org-warning)))
+
   (setq org-agenda-files
-	'("/home/rg/Development/Playground/emacs/SystemCraftersEmacsFromScratch/README.org")))
+        '("/home/rg/Data/Knowledge/Org/")))
+
+(use-package org-journal
+  :after org
+  :ensure t
+  :defer t
+  :init
+  (setq org-journal-prefix-key "C-c j")
+  :config
+  (setq org-journal-date-prefix "#+TITLE: "
+        org-journal-time-prefix "* "
+        org-journal-date-format "%a, %Y-%m-%d"
+        org-journal-file-format "%Y-%m-%d.org"
+        org-journal-dir "/home/rg/Data/Knowledge/Org/Journal/"))
 
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
 
-(set-face-attribute 'default nil :font "MonaspiceKr Nerd Font Propo" :height 280)
+(set-face-attribute 'default nil :font "MonaspiceKr Nerd Font Propo" :height 240)
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
@@ -77,6 +97,7 @@
 (global-set-key (kbd "C-s") 'swiper-isearch)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
 
 ;; Keybinds I'm still exploring
 
@@ -87,7 +108,7 @@
 (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 (global-set-key (kbd "<f2> j") 'counsel-set-variable)
-(global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+
 (global-set-key (kbd "C-c v") 'ivy-push-view)
 (global-set-key (kbd "C-c V") 'ivy-pop-view)
 (global-set-key (kbd "C-c c") 'counsel-compile)

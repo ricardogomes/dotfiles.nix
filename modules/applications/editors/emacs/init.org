@@ -1,5 +1,7 @@
-#*TITLE: Ricardo Gomes Emacs Literate Config
-#*AUTHOR: Ricardo Gomes
+t#+TITLE: Ricardo Gomes Emacs Literate Config
+#+AUTHOR: Ricardo Gomes
+
+
 
 * Reset Emacs base UI
 
@@ -16,6 +18,9 @@ The first step is to reset the defaults from Emacs that don't make much sense to
   (menu-bar-mode -1)
   (set-fringe-mode 10)
 
+  (setq make-backup-files nil)
+  (setq create-lockfiles nil)
+
 #+END_SRC
 
 
@@ -29,18 +34,16 @@ Next set is to setup the package repositories and import the use-package package
 
   (require 'package)
   (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			   ("org" . "https://orgmode.org/elpa/")
-			   ("elpa" . "https://elpa.gnu.org/packages/")))
+                           ("org" . "https://orgmode.org/elpa/")
+                           ("elpa" . "https://elpa.gnu.org/packages/")))
   (package-initialize)
+  
   (unless package-archive-contents
     (package-refresh-contents))
   (unless (package-installed-p 'use-package)
     (package-install 'use-package))
   (require 'use-package)
   (setq use-package-always-ensure t)
-
-
-  
 
 #+END_SRC
 
@@ -51,44 +54,64 @@ Next set is to setup the package repositories and import the use-package package
 
 Next I want to setup org-mode.
 
+:CODE:
 #+BEGIN_SRC emacs-lisp :tangle init.el
 
-(defun rg/org-mode-setup()
-  (org-indent-mode)
-  (visual-line-mode 1))
+  (defun rg/org-mode-setup()
+    (org-indent-mode)
+    (visual-line-mode 1))
 
-(use-package org
-  :hook (org-mode . rg/org-mode-setup)
-  :config
-  (setq org-ellipsis " ")
+  (use-package org
+    :hook (org-mode . rg/org-mode-setup)
+    :config
+    (setq org-ellipsis " ")
 
-  (setq org-agenda-start-with-log-mode t)
-  (setq org-log-done 'time)
-  (setq org-log-into-drawer t)
+    (setq org-agenda-start-with-log-mode t)
+    (setq org-log-done 'time)
+    (setq org-log-into-drawer t)
 
-  (setq org-todo-keywords
-	'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-	  (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANCEL(k@)")))
-  
-  (setq org-agenda-files
-	'("/home/rg/Development/Playground/emacs/SystemCraftersEmacsFromScratch/README.org")))
+    (setq org-todo-keywords
+          '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+            (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANCEL(k@)")))
 
-(use-package org-bullets
-  :after org
-  :hook (org-mode . org-bullets-mode))
-   
+    (setq org-todo-keyword-faces
+          '(("TODO" . org-warning)))
+
+    (setq org-agenda-files
+          '("/home/rg/Data/Knowledge/Org/")))
+
+  (use-package org-journal
+    :after org
+    :ensure t
+    :defer t
+    :init
+    (setq org-journal-prefix-key "C-c j")
+    :config
+    (setq org-journal-date-prefix "#+TITLE: "
+          org-journal-time-prefix "* "
+          org-journal-date-format "%a, %Y-%m-%d"
+          org-journal-file-format "%Y-%m-%d.org"
+          org-journal-dir "/home/rg/Data/Knowledge/Org/Journal/"))
+
+  (use-package org-bullets
+    :after org
+    :hook (org-mode . org-bullets-mode))
+
 #+END_SRC
 
-** TODO Research how to maek sure org-mode exists on initial bootstrap
+** TODO Testing
 
-** TODO Improve Documentation
+** TODO Research how to make sure org-mode exists on initial bootstrap :research:
+
+** TODO Improve Documentation :documentation:
+
 * Set up UI baseline
 
 These are UI changes, like fonts, themes and UI features (rainbow-delimiters).
 
 #+BEGIN_SRC emacs-lisp :tangle init.el
 
-  (set-face-attribute 'default nil :font "MonaspiceKr Nerd Font Propo" :height 280)
+  (set-face-attribute 'default nil :font "MonaspiceKr Nerd Font Propo" :height 240)
 
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
@@ -114,17 +137,18 @@ These are UI changes, like fonts, themes and UI features (rainbow-delimiters).
 
 #+END_SRC
 
-** TODO Improve Documentation
+** TODO Improve Documentation :research:
 
 * Setup Packages
 
-** TODO Research ivy
+** NEXT Research ivy | counsel | swiper
 
 Ivy seems to be a set of 3 packages, *ivy* itself is a completion mechanism, *counsel* is a collection of ivy-enhanced versions of emacs
 commands, and swiper is ivy-enhanced alternative to Isearch (which at
 this time I have no idea what it is).
 
 The package that contains these tools seems to be the *counsel* package.
+
 
 
 #+begin_src emacs-lisp :tangle init.el
@@ -139,7 +163,8 @@ The package that contains these tools seems to be the *counsel* package.
   (global-set-key (kbd "C-s") 'swiper-isearch)
   (global-set-key (kbd "M-x") 'counsel-M-x)
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-
+  (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+  
   ;; Keybinds I'm still exploring
 
   (global-set-key (kbd "M-y") 'counsel-yank-pop)
@@ -149,7 +174,7 @@ The package that contains these tools seems to be the *counsel* package.
   (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
   (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
   (global-set-key (kbd "<f2> j") 'counsel-set-variable)
-  (global-set-key (kbd "C-x b") 'ivy-switch-buffer)
+
   (global-set-key (kbd "C-c v") 'ivy-push-view)
   (global-set-key (kbd "C-c V") 'ivy-pop-view)
   (global-set-key (kbd "C-c c") 'counsel-compile)
@@ -170,8 +195,12 @@ The package that contains these tools seems to be the *counsel* package.
   (global-set-key (kbd "C-c o") 'counsel-outline)
   (global-set-key (kbd "C-c t") 'counsel-load-theme)
   (global-set-key (kbd "C-c F") 'counsel-org-file)
-  
+
 #+end_src
+
+*** Additional Resources
+- [[Ivy User Manual][https://oremacs.com/swiper/]]
+- 
 
 ** TODO Research ivy-rich
 
@@ -183,9 +212,10 @@ The package that contains these tools seems to be the *counsel* package.
 
 ** TODO Research helpful
 
-** TODO Research projectile
+** TODO Research projectile                                       :research:
 
-** TODO Research dashboard
+** TODO Research dashboard                                        :research:
+
 
 
 
