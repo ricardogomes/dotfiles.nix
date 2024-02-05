@@ -47,12 +47,15 @@
 		just
 		kubectl
 		libreoffice-fresh
+		hunspell
+		hunspellDicts.pt-pt
+		hunspellDicts.en_US
 		logseq
 		mongodb-compass
 		neofetch
 		networkmanagerapplet
 		nmap
-        nixpkgs-fmt
+		nixpkgs-fmt
 		nodejs
 		nodePackages_latest.live-server
 		nodePackages_latest.vercel
@@ -67,9 +70,9 @@
 		pdfsam-basic
 		powershell
 		python3Full
-        pstree
+        	pstree
 		ranger
-        remmina
+        	remmina
 		rofi
 		robo3t
 		rstudio
@@ -80,14 +83,14 @@
 		unrar
 		virt-manager
 		vlc
-        ventoy
+        	ventoy
 		xfce.thunar
 		xorg.xrandr
 		zotero
 		teams-for-linux
 		terraform
-        udiskie
-        usermount
+        	udiskie
+        	usermount
 		xsel
 		xorg.xhost
 		wireshark
