@@ -98,6 +98,7 @@
 		zoom-us
 		cargo
 		rustc
+		zip
 	];
 
 
