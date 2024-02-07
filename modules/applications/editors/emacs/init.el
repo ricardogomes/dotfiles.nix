@@ -10,6 +10,10 @@
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
 
+(global-unset-key (kbd "C-x i"))      ;; - emacs - Insert contents of _FILENAME_ into buffer
+(global-unset-key (kbd "C-x C-v"))    ;; - emacs - Replace buffer with _FILENAME_
+(global-unset-key (kbd "C-x C-q"))    ;; - emacs - Toggle Read Only
+
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
@@ -33,18 +37,22 @@
   (setq org-ellipsis " ")
 
   (setq org-agenda-start-with-log-mode t)
+  (setq org-agenda-span 14)
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
 
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-          (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANCEL(k@)")))
+        '((sequence "TODO(t)" "NEXT(n!)" "DOING(i!)" "|" "DONE(d!)")
+          (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANCEL(k@)")
+          (sequence "MILESTONE(m)" "|" "DELIVERED(d)" "CANCELED(c@)")))
 
   (setq org-todo-keyword-faces
         '(("TODO" . org-warning)))
 
   (setq org-agenda-files
-        '("/home/rg/Data/Knowledge/Org/")))
+        '("/home/rg/Data/Knowledge/Org/Projects")))
+
+(global-set-key (kbd "C-c l") 'org-store-link)
 
 (use-package org-journal
   :after org
@@ -64,6 +72,7 @@
   :hook (org-mode . org-bullets-mode))
 
 (set-face-attribute 'default nil :font "MonaspiceKr Nerd Font Propo" :height 240)
+(add-to-list 'default-frame-alist '(font . "MonaspiceKr Nerd Font Propo-16"))
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
@@ -129,3 +138,22 @@
 (global-set-key (kbd "C-c o") 'counsel-outline)
 (global-set-key (kbd "C-c t") 'counsel-load-theme)
 (global-set-key (kbd "C-c F") 'counsel-org-file)
+
+(use-package which-key
+:init
+  (which-key-mode 1)
+:diminish
+:config
+(setq which-key-side-window-location 'bottom
+	which-key-sort-order #'which-key-key-order-alpha
+	which-key-allow-imprecise-window-fit nil
+	which-key-sort-uppercase-first nil
+	which-key-add-column-padding 1
+	which-key-max-display-columns nil
+	which-key-min-display-lines 6
+	which-key-side-window-slot -10
+	which-key-side-window-max-height 0.25
+	which-key-idle-delay 0.8
+	which-key-max-description-length 25
+	which-key-allow-imprecise-window-fit nil
+	which-key-separator " → " ))
