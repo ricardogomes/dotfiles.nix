@@ -99,7 +99,7 @@
 		cargo
 		rustc
 		zip
-		texliveMedium
+		texliveFull
 	];
 
 
