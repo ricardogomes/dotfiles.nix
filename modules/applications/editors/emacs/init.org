@@ -5,14 +5,16 @@
 
 This section is not dynamic, so there might be some keymaps that are not present or some that are wrong, but I try to keep it up to date to serve as a cheatsheet.
 
-| Keymap  | Function          | Package | Notes                                          |
-|---------+-------------------+---------+------------------------------------------------|
-| C-x C-f | counsel-find-file | counsel | Find file                                      |
-| C-x C-s | save-buffer       | emacs   |                                                |
-| C-x s   | save-some-buffers | emacs   | Promtps user for action on each unsaved buffer |
-| C-x C-w | write-file        | emacs   | Save as                                        |
-| C-c l   | org-store-link    | org     | Capture current possition                      |
-| C-c C-l | org-insert-link   | org     | Insert captured link                           |
+| Keymap      | Function          | Package | Notes                                          |
+|-------------+-------------------+---------+------------------------------------------------|
+| C-x C-f     | counsel-find-file | counsel | Find file                                      |
+| C-x C-s     | save-buffer       | emacs   |                                                |
+| C-x s       | save-some-buffers | emacs   | Promtps user for action on each unsaved buffer |
+| C-x C-w     | write-file        | emacs   | Save as                                        |
+| C-c l       | org-store-link    | org     | Capture current possition                      |
+| C-c C-l     | org-insert-link   | org     | Insert captured link                           |
+| C-c C-x TAB | org-clock-in      | org     | Start clock                                    |
+| C-c C-x C-o | org-clock-out     | org     | Stop clock                                     |
 
 * Reset Emacs base UI
 
