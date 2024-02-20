@@ -42,7 +42,7 @@
   (setq org-log-into-drawer t)
 
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n!)" "DOING(i!)" "|" "DONE(d!)")
+        '((sequence "TODO(t)" "NEXT(n)" "DOING(i)" "|" "DONE(d!)")
           (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANCEL(k@)")
           (sequence "MILESTONE(m)" "|" "DELIVERED(d)" "CANCELED(c@)")))
 
