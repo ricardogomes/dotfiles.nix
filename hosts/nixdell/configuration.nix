@@ -1,15 +1,12 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, callPackage, ... }:
 
 {
 
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
       ./packages.nix
+      ./networking.nix
       ../../modules/system/nixos.nix
       ../../modules/system/boot.nix
       ../../modules/system/networking.nix
@@ -67,6 +64,22 @@
     '';
   };
 
+
+  networking = {
+		hostName = host.hostName;
+		extraHosts = 
+		''
+			192.168.1.254 meo.local
+		    192.168.0.1 dlink1.local
+  		'';
+		networkmanager = {
+			enable = true;
+		};
+		
+		firewall = {
+			allowedTCPPorts = [ 24800 24802 24804 ]; # Barrier
+		};
+	};
 
   system.stateVersion = "23.11"; # Did you read the comment?
   
