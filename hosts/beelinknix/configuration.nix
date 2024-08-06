@@ -10,6 +10,7 @@
       ../../modules/system/locale.nix
       ../../modules/system/fonts.nix
       ../../modules/virtualization
+      ../../modules/observability/prometheus-node-exporter.nix
     ];
 
   hardware.firmware = with pkgs; [
