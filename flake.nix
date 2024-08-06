@@ -44,6 +44,18 @@
 						./hosts/nixdell/configuration.nix
 					];
 				};
+        beelinknix = nixpkgs.lib.nixosSystem {
+					inherit system;
+					specialArgs = {
+						inherit inputs vars;
+						host = {
+							hostName = "beelinknix";
+						};
+					};
+					modules = [
+						./hosts/beelinknix/configuration.nix
+					];
+				};
 			};
 			homeConfigurations = {
 				${vars.user} = home-manager.lib.homeManagerConfiguration {
