@@ -4,7 +4,7 @@
 
     services.prometheus = {
         exporters = {
-            .node = {
+            node = {
                 enable = true;
                 port = 9000;
                 enabledCollectors = [ "systemd" ];
