@@ -1,13 +1,14 @@
 {config, pkgs, ... }:
 
 {
-	nixpkgs.config = {
-		allowUnfree = true;
-		permittedInsecurePackages = [];
-	};
-    
-	environment.systemPackages = with pkgs; [
+    nixpkgs.config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [];
+    };
+
+    environment.systemPackages = with pkgs; [
         byobu
+        docker-compose
         git
         neovim 
         pciutils
@@ -16,6 +17,6 @@
         tree
         vim
         wget
-	];
+    ];
 
 }
