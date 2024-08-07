@@ -10,8 +10,10 @@
         byobu
         docker-compose
         git
+        libvirt
         neovim 
         pciutils
+        qemu
         ranger
         tmux 
         tree
