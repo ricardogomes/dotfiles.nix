@@ -42,7 +42,7 @@
                     path = "/data";
                     browseable = "yes";
                     "read only" = false;
-                    "guest ok" = "no";
+                    "guest ok" = "yes";
                     #"create mask" = "0666";
                     #"directory mask" = "0666";
                     #"force user" = "rg";
@@ -53,7 +53,7 @@
                     path = "/ssd";
                     browseable = "yes";
                     "read only" = false;
-                    "guest ok" = "no";
+                    "guest ok" = "yes";
                     #"create mask" = "0666";
                     #"directory mask" = "0666";
                     "valid users" = "rg";
