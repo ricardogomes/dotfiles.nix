@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./packages.nix
       ./programs.nix
+      ./services.nix
       ./networking.nix
       ../../modules/system/boot.nix
       ../../modules/system/locale.nix
