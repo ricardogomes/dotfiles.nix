@@ -8,26 +8,6 @@
             extraConfig = ''
                 workgroup = WORKGROUP
                 server role = standalone server
-                dns proxy = no
-                vfs objects = catia fruit streams_xattr
-
-                pam password change = yes
-                map to guest = bad user
-                usershare allow guests = yes
-                create mask = 0664
-                force create mode = 0664
-                directory mask = 0775
-                force directory mode = 0775
-                follow symlinks = yes
-                load printers = no
-                printing = bsd
-                printcap name = /dev/null
-                disable spoolss = yes
-                strict locking = no
-                aio read size = 0
-                aio write size = 0
-                vfs objects = acl_xattr catia fruit streams_xattr
-                inherit permissions = yes
 
                 # Security
                 client ipc max protocol = SMB3
