@@ -41,7 +41,8 @@
                 data = {
                     path = "/data";
                     browseable = "yes";
-                    "read only" = false;
+                    "read only" = "no";
+                    writable = "yes";
                     "guest ok" = "yes";
                     #"create mask" = "0666";
                     #"directory mask" = "0666";
@@ -52,6 +53,7 @@
                 ssd = {
                     path = "/ssd";
                     browseable = "yes";
+                    writable = "yes";
                     "read only" = false;
                     "guest ok" = "yes";
                     #"create mask" = "0666";
