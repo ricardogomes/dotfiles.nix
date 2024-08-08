@@ -43,22 +43,22 @@
                     browseable = "yes";
                     "read only" = "no";
                     writable = "yes";
-                    "guest ok" = "yes";
+                    "guest ok" = "no";
                     #"create mask" = "0666";
                     #"directory mask" = "0666";
                     #"force user" = "rg";
                     #"force group" = "users";
-                    #"valid users" = "rg";
+                    "valid users" = "rg";
                 };
                 ssd = {
                     path = "/ssd";
                     browseable = "yes";
                     writable = "yes";
                     "read only" = false;
-                    "guest ok" = "yes";
+                    "guest ok" = "no";
                     #"create mask" = "0666";
                     #"directory mask" = "0666";
-                    #"valid users" = "rg";
+                    "valid users" = "rg";
                     #"force user" = "rg";
                     #"force group" = "users";
                 };
