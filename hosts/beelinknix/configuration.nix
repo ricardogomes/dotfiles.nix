@@ -24,7 +24,7 @@
 
    users.users.rg = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "libvirtd" "docker" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "libvirtd" "docker" "samba"];
    };
   services.openssh.enable = true;
 
