@@ -24,12 +24,20 @@
                     browseable = "yes";
                     "read only" = false;
                     "guest ok" = "no";
+                    "create mask" = "0666";
+                    "directory mask" = "0666";
+                    "force user" = "rg";
+                    "force group" = "users";
                 };
                 ssd = {
                     path = "/ssd";
                     browseable = "yes";
                     "read only" = false;
                     "guest ok" = "no";
+                    "create mask" = "0666";
+                    "directory mask" = "0666";
+                    "force user" = "rg";
+                    "force group" = "users";
                 };
             };
         };  
