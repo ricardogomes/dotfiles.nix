@@ -47,7 +47,7 @@
                     #"directory mask" = "0666";
                     #"force user" = "rg";
                     #"force group" = "users";
-                    "valid users" = "rg";
+                    #"valid users" = "rg";
                 };
                 ssd = {
                     path = "/ssd";
@@ -56,7 +56,7 @@
                     "guest ok" = "yes";
                     #"create mask" = "0666";
                     #"directory mask" = "0666";
-                    "valid users" = "rg";
+                    #"valid users" = "rg";
                     #"force user" = "rg";
                     #"force group" = "users";
                 };
