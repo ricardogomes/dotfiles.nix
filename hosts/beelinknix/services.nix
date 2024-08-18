@@ -64,5 +64,16 @@
                 };
             };
         };  
+
+        minecraft-server = {
+            enable = true;
+            eula = true;
+            declarative = true;
+            serverProperties = {
+                level-name = "vilage world 1.21";
+                level-seed = "2143341957457548";
+                allow-flight = true;
+            };
+        };
     };
 }
