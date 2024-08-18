@@ -69,10 +69,12 @@
             enable = true;
             eula = true;
             declarative = true;
+            jvmOpts = "-Xmx4096M -Xms4096M -XX:+UseG1GC";
             package = pkgs.minecraft-server.override {
                 version = "1.21.1";
                 url = "https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar";
                 sha1 = "59353fb40c36d304f2035d51e7d6e6baa98dc05c";
+                jre_headless = pkgs.jdk21;  # Specify Java 21
             };
             serverProperties = {
                 level-name = "village world 1.21";
