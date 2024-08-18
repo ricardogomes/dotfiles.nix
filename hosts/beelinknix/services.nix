@@ -69,9 +69,13 @@
             enable = true;
             eula = true;
             declarative = true;
-            package = pkgs.minecraft-server-1-21;
+            package = pkgs.minecraft-server.override {
+                version = "1.21.1";
+                url = "https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar";
+                sha1 = "59353fb40c36d304f2035d51e7d6e6baa98dc05c";
+            };
             serverProperties = {
-                level-name = "vilage world 1.21";
+                level-name = "village world 1.21";
                 level-seed = "2143341957457548";
                 allow-flight = true;
             };
