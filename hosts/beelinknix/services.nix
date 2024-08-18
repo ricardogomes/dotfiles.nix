@@ -69,7 +69,7 @@
             enable = true;
             eula = true;
             declarative = true;
-            package = pkgs.minecraft-server_1_21_1;
+            package = pkgs.minecraft-server-1-21-1;
             serverProperties = {
                 level-name = "vilage world 1.21";
                 level-seed = "2143341957457548";
