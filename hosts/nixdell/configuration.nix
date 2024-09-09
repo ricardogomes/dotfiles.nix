@@ -66,7 +66,7 @@
 
 
   networking = {
-		hostName = host.hostName;
+		hostName = "nixdell";
 		extraHosts = 
 		''
 			192.168.1.254 meo.local
