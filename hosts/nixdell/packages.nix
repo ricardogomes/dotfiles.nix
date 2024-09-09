@@ -25,7 +25,6 @@
 		bruno
 		claws
 		cobra-cli
-		dbeaver
 		dig
 		direnv
 		discord
