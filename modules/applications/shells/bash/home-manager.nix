@@ -9,7 +9,10 @@ in
 			enable = true;
 			bashrcExtra = bashrcConfig;
             shellAliases = aliases;
-            initExtra = ''eval "$(direnv hook bash)"'';
+            initExtra = ''
+            eval "$(direnv hook bash)"
+            export PATH=$PATH:$(go env GOPATH)/bin
+            '';
 	 	};
 	};
 }
