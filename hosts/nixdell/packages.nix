@@ -99,6 +99,9 @@
 		rustc
 		zip
 		texliveFull
+
+		whatsapp-for-linux
+		liquibase
 	];
 
 
