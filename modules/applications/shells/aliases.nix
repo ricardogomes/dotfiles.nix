@@ -6,6 +6,7 @@
     "r"     = "ranger";
     "sr"    = "sudo ranger";
     "g"     = "git";
+    "lazyg" = "git add . && git commit -m "
     "d"     = "cd $DATA";
     "doc"   = "cd $DATA/documents";
     "dev"   = "cd $DEVELOPMENT";
