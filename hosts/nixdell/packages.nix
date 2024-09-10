@@ -102,6 +102,7 @@
 
 		whatsapp-for-linux
 		liquibase
+        sqlitebrowser
 	];
 
 
