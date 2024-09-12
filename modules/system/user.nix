@@ -6,7 +6,7 @@
 		users.${vars.user} = {
 		    isNormalUser = true;
 		    description = vars.username; 
-		    extraGroups = [ "networkmanager" "wheel" "docker" "scanner" "lp" "libvirtd"];
+		    extraGroups = [ "networkmanager" "wheel" "docker" "scanner" "lp" "libvirtd" "video"];
 		};
 	};
 }

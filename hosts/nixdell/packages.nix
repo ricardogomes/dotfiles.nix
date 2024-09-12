@@ -75,6 +75,9 @@
 		rofi
 		robo3t
 		rstudio
+		rPackages.vitae
+		rPackages.tidyverse
+		rPackages.tibble
 		simple-scan
 		starship
 		synergy
