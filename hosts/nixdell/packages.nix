@@ -25,7 +25,6 @@
     discord
     docker-compose
     doctl
-    dwebp
     evince
     feh
     firefox
@@ -102,7 +101,8 @@
     liquibase
     sqlitebrowser
     delve
-	  zoom-us
+    zoom-us
+    libwebp
   ];
 
 }
