@@ -14,7 +14,7 @@
     sqlite
     cmake
     gnumake
-    nixfmt
+    nixfmt-classic
     shfmt
     shellcheck
     pandoc

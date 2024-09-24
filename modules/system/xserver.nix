@@ -2,6 +2,14 @@
 
 {
 
+	services.libinput = {
+		touchpad.disableWhileTyping = true;
+	};
+
+	services.displayManager = {
+		defaultSession = "none+i3";
+	};
+
 	services.xserver = {
     	enable = true;
         xkb = {
@@ -16,7 +24,7 @@
 
 		displayManager = {
 			lightdm.enable = true;
-			defaultSession = "none+i3";
+			
 			setupCommands = ''
         		${pkgs.xorg.xhost}/bin/xhost +SI:localuser:root
 		        ${pkgs.xorg.xhost}/bin/xhost +SI:localuser:rg
@@ -24,9 +32,7 @@
 			'';
     	};
     
-		libinput = {
-			touchpad.disableWhileTyping = true;
-		};
+		
 
 		windowManager = {
 			i3  = {
