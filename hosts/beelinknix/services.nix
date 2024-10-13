@@ -71,8 +71,8 @@
             declarative = true;
             jvmOpts = "-Xmx4096M -Xms4096M -XX:+UseG1GC";
             package = pkgs.minecraft-server.override {
-                version = "1.21.1";
-                url = "https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar";
+                version = "1.21.2";
+                url = "https://piston-data.mojang.com/v1/objects/8d2de8704771e210d69e7b7ac70d858a677bcb70/server.jar";
                 sha1 = "59353fb40c36d304f2035d51e7d6e6baa98dc05c";
                 jre_headless = pkgs.jdk21;  # Specify Java 21
             };
@@ -84,3 +84,7 @@
         };
     };
 }
+
+
+
+#https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar
