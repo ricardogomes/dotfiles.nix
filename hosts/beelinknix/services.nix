@@ -6,7 +6,7 @@
             enable = true;
             securityType = "user";
             settings = {
-                workgroup = WORKGROUP;
+                workgroup = "WORKGROUP";
                 "server role" = "standalone server";
                 "dns proxy" = no;
                 "pam password change" = yes;
@@ -18,8 +18,8 @@
                 "force directory mode" = 0777;
                 "follow symlinks" = yes;
                 "load printers" = no;
-                printing = bsd;
-                "printcap name" = /dev/null;
+                "printing" = "bsd";
+                "printcap name" = "/dev/null";
                 "disable spoolss" = yes;
                 "strict locking" = no;
                 "aio read size" = 0;
@@ -28,12 +28,12 @@
                 "inherit permissions" = yes;
 
                 # Security
-                "client ipc max protocol" = SMB3;
-                "client ipc min protocol" = SMB2_10;
-                "client max protocol" = SMB3;
-                "client min protocol" = SMB2_10;
-                "server max protocol" = SMB3;
-                "server min protocol" = SMB2_10;
+                "client ipc max protocol" = "SMB3";
+                "client ipc min protocol" = "SMB2_10";
+                "client max protocol" = "SMB3";
+                "client min protocol" = "SMB2_10";
+                "server max protocol" = "SMB3";
+                "server min protocol" = "SMB2_10";
            
                 data = {
                     path = "/data";
