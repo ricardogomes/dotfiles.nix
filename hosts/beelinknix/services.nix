@@ -22,8 +22,8 @@
                 "printcap name" = "/dev/null";
                 "disable spoolss" = "yes";
                 "strict locking" = "no";
-                "aio read size" = 0;
-                "aio write size" = 0;
+                #"aio read size" = 0;
+                #"aio write size" = 0;
                 "vfs objects" = "acl_xattr catia fruit streams_xattr";
                 "inherit permissions" = "yes";
 
