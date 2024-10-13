@@ -35,7 +35,7 @@
                     "client min protocol" = "SMB2_10";
                     "server max protocol" = "SMB3";
                     "server min protocol" = "SMB2_10";
-                } 
+                };
            
                 data = {
                     path = "/data";
