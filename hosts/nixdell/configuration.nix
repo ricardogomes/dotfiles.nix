@@ -17,6 +17,7 @@
       ../../modules/system/sound.nix
       ../../modules/system/user.nix
       ../../modules/system/fonts.nix
+      ../../modules/system/graphics.nix
       ../../modules/system/cleanup.nix
       ../../modules/virtualization
       ../../modules/applications/editors/configuration.nix
