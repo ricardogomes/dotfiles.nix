@@ -9,6 +9,7 @@
       ./networking.nix
       ../../modules/system/nixos.nix
       ../../modules/system/boot.nix
+      ../../modules/system/security.nix
       ../../modules/system/power.nix
       ../../modules/system/locale.nix
       ../../modules/system/xserver.nix
