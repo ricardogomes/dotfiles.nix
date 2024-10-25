@@ -19,7 +19,7 @@
 		    LC_NAME = "pt_PT.UTF-8";
 		    LC_NUMERIC = "pt_PT.UTF-8";
 		    LC_PAPER = "pt_PT.UTF-8";
-		    LC_TELEP mHONE = "pt_PT.UTF-8";
+		    LC_TELEPHONE = "pt_PT.UTF-8";
 		    LC_TIME = "pt_PT.UTF-8";
 		};
 		supportedLocales = [
