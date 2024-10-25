@@ -15,5 +15,5 @@
     "hosts" = "sudo $EDITOR /etc/hosts";
     "c"     = "clear";
     "mkd"   = "mkdir -pv";
-    "sail"  = "vendor/bin/sail"
+    "sail"  = "vendor/bin/sail";
 }
