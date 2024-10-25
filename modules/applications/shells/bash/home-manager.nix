@@ -11,7 +11,6 @@ in
             shellAliases = aliases;
             initExtra = ''
             eval "$(direnv hook bash)"
-            export PATH=$PATH:$(go env GOPATH)/bin
             '';
 	 	};
 	};
