@@ -7,11 +7,6 @@
     "sr"    = "sudo ranger";
     "g"     = "git";
     "lazyg" = "git add . && git commit -m ";
-    "d"     = "cd $DATA";
-    "doc"   = "cd $DATA/documents";
-    "dev"   = "cd $DEVELOPMENT";
-    "proj"  = "cd $DATA/documents/projects";
-    "dl"    = "cd $HOME/Downloads";
     ".."    = "cd ..";
     "..."   = "cd ../..";
     "...."  = "cd ../../..";
@@ -20,4 +15,5 @@
     "hosts" = "sudo $EDITOR /etc/hosts";
     "c"     = "clear";
     "mkd"   = "mkdir -pv";
+    "sail"  = "vendor/bin/sail"
 }
