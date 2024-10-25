@@ -24,6 +24,9 @@
 			pulse = {
 				enable = true;
 			};
+			jack = {
+				enable = true;
+			};
 		};
 	};
 

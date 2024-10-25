@@ -9,13 +9,14 @@
       ./networking.nix
       ../../modules/system/nixos.nix
       ../../modules/system/boot.nix
-      ../../modules/system/networking.nix
+      ../../modules/system/power.nix
       ../../modules/system/locale.nix
       ../../modules/system/xserver.nix
       ../../modules/system/printing.nix
       ../../modules/system/sound.nix
       ../../modules/system/user.nix
       ../../modules/system/fonts.nix
+      ../../modules/system/cleanup.nix
       ../../modules/virtualization
       ../../modules/applications/editors/configuration.nix
     ];
@@ -63,23 +64,6 @@
       bind c new-window -c "#{pane_current_path}"
     '';
   };
-
-
-  networking = {
-		hostName = "nixdell";
-		extraHosts = 
-		''
-			192.168.1.254 meo.local
-		    192.168.0.1 dlink1.local
-  		'';
-		networkmanager = {
-			enable = true;
-		};
-		
-		firewall = {
-			allowedTCPPorts = [ 24800 24802 24804 ]; # Barrier
-		};
-	};
 
   system.stateVersion = "23.11"; # Did you read the comment?
   
