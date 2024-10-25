@@ -24,4 +24,10 @@
 	environment = {
 		pathsToLink = [ "/libexec" ];
 	};
+
+  programs = {
+    dconf = {
+      enable = true;
+    };
+  };
 }
