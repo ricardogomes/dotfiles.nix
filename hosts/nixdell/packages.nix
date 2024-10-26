@@ -14,7 +14,6 @@
     arandr
     brave
     barrier
-    bun
     bruno
     direnv
     discord
