@@ -4,6 +4,10 @@
 
     networking = {
         hostName = host.hostName;
+		nameservers = [
+			"9.9.9.9#dns.quad9.net"
+			"149.112.112.112#dns.quad9.net"
+		];
 		extraHosts = 
 		''
 			192.168.1.254 meo.local
@@ -12,6 +16,7 @@
   		'';
 		networkmanager = {
 			enable = true;
+			dns = "systemd-resolved";
 		};
 		
 		firewall = {
@@ -21,5 +26,16 @@
 
 	programs.nm-applet = {
 		enable = true;
+	};
+
+	services.resolved = {
+		enable = true;
+		dnsovertls = "true"; # if issue downgrade to opportunistic
+		dnssec = "allow-downgrade";
+		domains = ["~."];
+		fallbackDns = [
+			"9.9.9.9#dns.quad9.net"
+			"149.112.112.112#dns.quad9.net"
+		];
 	};
 }
