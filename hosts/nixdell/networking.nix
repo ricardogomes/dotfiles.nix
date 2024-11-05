@@ -5,6 +5,8 @@
     networking = {
         hostName = host.hostName;
 		nameservers = [
+            "1.1.1.1"
+            "172.22.1.101"
 			"9.9.9.9#dns.quad9.net"
 			"149.112.112.112#dns.quad9.net"
 		];
@@ -16,7 +18,7 @@
   		'';
 		networkmanager = {
 			enable = true;
-			dns = "systemd-resolved";
+			#dns = "systemd-resolved";
 		};
 		
 		firewall = {
@@ -29,13 +31,15 @@
 	};
 
 	services.resolved = {
-		enable = true;
+		enable = false;
 		dnsovertls = "true"; # if issue downgrade to opportunistic
 		dnssec = "allow-downgrade";
 		domains = ["~."];
 		fallbackDns = [
 			"9.9.9.9#dns.quad9.net"
 			"149.112.112.112#dns.quad9.net"
+            "172.22.1.101"
+            "172.22.1.102"
 		];
 	};
 }
