@@ -4,8 +4,10 @@
 
 	fonts = {
 		packages = with pkgs; [
-			(nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Monaspace"]; })
-			noto-fonts-emoji
+			nerd-fonts.fira-code
+            nerd-fonts.droid-sans-mono
+            nerd-fonts.monaspace
+            noto-fonts-emoji
 		    font-awesome
 		];
 		fontconfig = {
