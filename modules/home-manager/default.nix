@@ -5,6 +5,7 @@
 	imports = [
 		../applications/editors/home-manager.nix
 		../applications/shells/bash/home-manager.nix
+    ../applications/tools/home-manager.nix
 	];
 
   home.username = vars.user;
