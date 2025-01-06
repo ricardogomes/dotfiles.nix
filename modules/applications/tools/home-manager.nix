@@ -1,7 +1,7 @@
 { config, pkgs, vars, ... }:
 
 {
-    environment.systemPackages = with pkgs;[
+    home.packages = with pkgs;[
         alsa-utils
     ];
 }
