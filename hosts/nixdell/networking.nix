@@ -15,6 +15,7 @@
 			192.168.1.254 meo.local
 		    192.168.0.1 dlink1.local
             172.20.4.101 gd.ipleiria.pt
+            172.22.21.253 apps.dei.estg.ipleiria.pt
   		'';
 		networkmanager = {
 			enable = true;
