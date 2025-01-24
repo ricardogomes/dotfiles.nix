@@ -60,6 +60,7 @@
     zip
     whatsapp-for-linux
     zoom-us
+    haskellPackages.typst-symbols_0_1_7
   ];
 
 }
