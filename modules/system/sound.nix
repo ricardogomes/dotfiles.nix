@@ -9,9 +9,6 @@
 	};
 
 	services = {
-        pulseaudio = {
-            enable = true;
-        };
 		pipewire = {
 		    enable = true;
     		alsa = {
