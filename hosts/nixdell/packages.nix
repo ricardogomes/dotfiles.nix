@@ -44,7 +44,6 @@
     ranger
     remmina
     robo3t
-    rstudio
     simple-scan
     starship
     unzip

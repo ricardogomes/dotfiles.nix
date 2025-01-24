@@ -17,7 +17,6 @@
     nixfmt-classic
     shfmt
     shellcheck
-    pandoc
     emacsPackages.vterm
     libgcc
     gcc
