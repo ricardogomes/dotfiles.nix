@@ -43,4 +43,8 @@
             "172.22.1.102"
 		];
 	};
+
+    services.tailscale = {
+        enable = true;
+    };
 }

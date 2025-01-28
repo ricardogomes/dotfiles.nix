@@ -25,4 +25,8 @@
         nameservers = ["1.1.1.1" "192.168.1.254"];
     };
 
+    services.tailscale = {
+        enable = true;
+    };
+
 }
