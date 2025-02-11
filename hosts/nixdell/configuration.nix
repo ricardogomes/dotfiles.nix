@@ -19,6 +19,7 @@
       ../../modules/system/fonts.nix
       ../../modules/system/graphics.nix
       ../../modules/system/cleanup.nix
+      ../../modules/system/services.nix
       ../../modules/virtualization
       ../../modules/applications/editors/configuration.nix
     ];
