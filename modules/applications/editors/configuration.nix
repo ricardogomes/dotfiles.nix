@@ -23,6 +23,7 @@
     libtool
     libvterm
     libsForQt5.okular
+    code-cursor
   ];
 
   services.emacs = { enable = true; };
