@@ -7,11 +7,11 @@
 				"nix-command" 
 				"flakes" 
 			];
-      system-features = [
-        "kvm"
-        "big-parallel"
-        "nixos-test"
-      ];
+    		system-features = [
+				"kvm"
+				"big-parallel"
+				"nixos-test"
+			];
 			auto-optimise-store = true;
 		};
 		gc = {

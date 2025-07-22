@@ -5,7 +5,7 @@
     services = {
         ollama = {
             enable = true;
-            acceleration = false;
+            acceleration = true;
         };
     };
 }
