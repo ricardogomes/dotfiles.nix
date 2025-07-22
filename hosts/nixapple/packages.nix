@@ -69,6 +69,52 @@
     whatsapp-for-linux
     wget
     zoom-us
+
+    # Terminal
+    kitty  # GPU-accelerated terminal
+    
+    # App launcher
+    wofi   # Wayland native launcher (dmenu replacement)
+    
+    # Notification daemon
+    mako
+    libnotify
+    
+    # Wallpaper
+    swww   # Wayland wallpaper daemon
+    
+    # Bar
+    waybar # Status bar
+    
+    # Authentication agent
+    polkit_gnome
+    
+    # Screenshot
+    grim
+    slurp
+    wl-clipboard
+    
+    # Screen locking
+    swaylock-effects
+    
+    # Idle management
+    swayidle
+    
+    # Display management
+    wlr-randr
+    kanshi  # Auto display configuration
+    
+    # System tray and applets
+    networkmanagerapplet
+    blueman
+    
+    # File manager
+    nautilus
+    
+    # Additional utilities
+    brightnessctl  # Brightness control
+    pamixer        # Audio control
+    playerctl      # Media control
   ];
 
 }
