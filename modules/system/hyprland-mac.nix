@@ -11,14 +11,18 @@
 
   # Environment variables for NVIDIA + Wayland
   environment.sessionVariables = {
-    # If you have issues, try uncommenting these NVIDIA-specific vars
-    # WLR_NO_HARDWARE_CURSORS = "1";  # If cursor is invisible
-    # NIXOS_OZONE_WL = "1";           # For Electron apps
-    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    # GBM_BACKEND = "nvidia-drm";
-    # __GL_GSYNC_ALLOWED = "0";
-    # __GL_VRR_ALLOWED = "0";
-    # WLR_DRM_NO_ATOMIC = "1";
+    # Force software rendering to bypass NVIDIA issues
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+    
+    # Additional NVIDIA workarounds
+    LIBGL_ALWAYS_SOFTWARE = "1";
+    __GLX_VENDOR_LIBRARY_NAME = "mesa";
+    
+    # Disable NVIDIA-specific features
+    WLR_DRM_NO_ATOMIC = "1";
+    MOZ_DISABLE_RDD_SANDBOX = "1";
+    LIBVA_DRIVER_NAME = "nvidia";
     
     # General Wayland settings
     MOZ_ENABLE_WAYLAND = "1";
@@ -39,6 +43,55 @@
     ];
   };
 
+  # Essential packages for Hyprland
+  environment.systemPackages = with pkgs; [
+    # Terminal
+    kitty  # GPU-accelerated terminal
+    
+    # App launcher
+    wofi   # Wayland native launcher (dmenu replacement)
+    
+    # Notification daemon
+    mako
+    libnotify
+    
+    # Wallpaper
+    swww   # Wayland wallpaper daemon
+    
+    # Bar
+    waybar # Status bar
+    
+    # Authentication agent
+    polkit_gnome
+    
+    # Screenshot
+    grim
+    slurp
+    wl-clipboard
+    
+    # Screen locking
+    swaylock-effects
+    
+    # Idle management
+    swayidle
+    
+    # Display management
+    wlr-randr
+    kanshi  # Auto display configuration
+    
+    # System tray and applets
+    networkmanagerapplet
+    blueman
+    
+    # File manager
+    nautilus
+    
+    # Additional utilities
+    brightnessctl  # Brightness control
+    pamixer        # Audio control
+    playerctl      # Media control
+  ];
+
   # Enable services that work well with Wayland
   services = {
     # For GNOME keyring
@@ -53,17 +106,6 @@
     #   enable = true;
     #   wayland = true;
     # };
-
-    xserver.displayManager = {
-        lightdm.enable = true;
-        
-        setupCommands = ''
-            ${pkgs.xorg.xhost}/bin/xhost +SI:localuser:root
-            ${pkgs.xorg.xhost}/bin/xhost +SI:localuser:rg
-            export `dbus-launch`
-        '';
-    };
-
   };
 
   # Touchpad configuration for Wayland

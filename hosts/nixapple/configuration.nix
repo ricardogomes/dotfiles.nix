@@ -20,7 +20,7 @@
       ../../modules/system/security.nix
       ../../modules/system/power.nix
       ../../modules/system/locale.nix
-      #../../modules/system/xserver-mac.nix
+      ../../modules/system/xserver-mac.nix
       ../../modules/system/hyprland-mac.nix
       ../../modules/system/printing.nix
       ../../modules/system/sound.nix
