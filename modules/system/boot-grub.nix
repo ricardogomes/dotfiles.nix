@@ -11,7 +11,6 @@
             };
 			timeout = 5;
 		};
-		kernelPackages = pkgs.linuxPackages_6_6;
 		kernelParams = [
 			"quiet"
 			"loglevel=3"
