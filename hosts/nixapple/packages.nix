@@ -68,7 +68,6 @@
     whatsapp-for-linux
     wget
     zoom-us
-    haskellPackages.typst-symbols_0_1_7
   ];
 
 }

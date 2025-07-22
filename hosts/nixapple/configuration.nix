@@ -5,6 +5,11 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "broadcom-sta-6.30.223.271-57-6.15.7"
+  ];
+
+
   imports =
     [ 
       ./hardware-configuration.nix
