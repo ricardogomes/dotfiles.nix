@@ -19,7 +19,7 @@
 
     	desktopManager = {
 			lxqt.enable = false;
-			xterm.enable = true;
+			xterm.enable = false;
     	};
 
 		displayManager = {
