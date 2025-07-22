@@ -21,6 +21,14 @@
         ];
         blacklistedKernelModules = [ 
             "nouveau" 
+            "b43"
+            "b43legacy"
+            "ssb"
+            "bcm43xx"
+            "brcm80211"
+            "brcmfmac"
+            "brcmsmac"
+            "bcma"
         ];
 	};
 
