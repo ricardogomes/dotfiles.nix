@@ -22,6 +22,9 @@
 			enable = true;
 			#dns = "systemd-resolved";
 		};
+		wireless = {
+			enable = false;
+		};
 		
 		firewall = {
 			allowedTCPPorts = [ 24800 24802 24804 ]; # Barrier
