@@ -10,7 +10,6 @@
     "broadcom-sta-6.30.223.271-57-6.6.99"
   ];
 
-
   imports =
     [ 
       ./hardware-configuration.nix

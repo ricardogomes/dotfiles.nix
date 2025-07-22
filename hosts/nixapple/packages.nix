@@ -27,6 +27,7 @@
     google-chrome
     ghostscript
     htop
+    home-manager
     inetutils
     just
     libreoffice-fresh
