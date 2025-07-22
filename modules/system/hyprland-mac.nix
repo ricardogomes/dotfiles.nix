@@ -5,8 +5,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # For NVIDIA, though legacy drivers may have issues
-    enableNvidiaPatches = true;
+
   };
 
   # Environment variables for NVIDIA + Wayland
