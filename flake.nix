@@ -16,7 +16,12 @@
 
 	};
 
-	outputs = { self, nixpkgs, home-manager, ...}@inputs: 
+	outputs = { 
+		self, 
+		nixpkgs, 
+		home-manager, 
+		...
+	} @ inputs: 
 		let
 			vars = {
 				user = "rg";
@@ -45,7 +50,7 @@
 						./hosts/nixdell/configuration.nix
 					];
 				};
-        beelinknix = nixpkgs.lib.nixosSystem {
+        		beelinknix = nixpkgs.lib.nixosSystem {
 					inherit system;
 					specialArgs = {
 						inherit inputs vars;
@@ -57,7 +62,7 @@
 						./hosts/beelinknix/configuration.nix
 					];
 				};
-        nixapple = nixpkgs.lib.nixosSystem {
+        		nixapple = nixpkgs.lib.nixosSystem {
 					inherit system;
 					specialArgs = {
 						inherit inputs vars;
