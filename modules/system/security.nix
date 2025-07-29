@@ -44,8 +44,8 @@
 
   boot.kernelModules = ["tcp_bbr"];
 
-  services.gnome3.gnome-keyring.enable = true;
-  services.gnome3.seahorse.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
   
   security.pam.services.lightdm.enable = true;
 }

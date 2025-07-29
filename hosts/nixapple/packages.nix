@@ -63,6 +63,7 @@
     xorg.xrandr
     zotero
     teams-for-linux
+    tor-browser
     xsel
     xorg.xhost
     zip
