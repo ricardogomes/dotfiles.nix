@@ -10,6 +10,7 @@
             "172.22.1.101"
 			"9.9.9.9#dns.quad9.net"
 			"149.112.112.112#dns.quad9.net"
+			"192.168.1.254"
 		];
 		extraHosts = 
 		''
@@ -20,6 +21,7 @@
   		'';
 		networkmanager = {
 			enable = true;
+			dns = "none"; 
 			#dns = "systemd-resolved";
 		};
 		wireless = {
