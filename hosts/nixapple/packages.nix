@@ -70,6 +70,7 @@
     whatsapp-for-linux
     wget
     zoom-us
+    lsof
 
     # Terminal
     kitty  # GPU-accelerated terminal
