@@ -76,6 +76,7 @@
     texliveFull
     autopsy
     sleuthkit
+    positron-bin
 
     # Terminal
     kitty  # GPU-accelerated terminal
