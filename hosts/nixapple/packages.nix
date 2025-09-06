@@ -72,6 +72,10 @@
     zoom-us
     lsof
 
+
+    texliveFull
+    autopsy
+
     # Terminal
     kitty  # GPU-accelerated terminal
     

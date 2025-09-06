@@ -19,6 +19,10 @@
         extraModulePackages = [ 
             config.boot.kernelPackages.broadcom_sta 
         ];
+        extraModprobeConfig = ''
+            options wl ieee80211_disable_11n=1
+            options wl intf_name=eth%d
+        '';
         blacklistedKernelModules = [ 
             "nouveau" 
             "b43"

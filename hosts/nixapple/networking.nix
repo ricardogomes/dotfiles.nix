@@ -21,8 +21,22 @@
   		'';
 		networkmanager = {
 			enable = true;
-			dns = "none"; 
-			#dns = "systemd-resolved";
+			dns = "none";
+			wifi = {
+				powersave = false; 	
+			}; 
+			settings = {
+				wifi = {
+					mac-address-randomization = "1";
+					pmf = "0";
+					band = "a";
+					scan-rand-mac-address = "no";
+					bgscan = "";
+				};
+				connection = {
+					auth-timeout = "30";
+				};
+			};
 		};
 		wireless = {
 			enable = false;
