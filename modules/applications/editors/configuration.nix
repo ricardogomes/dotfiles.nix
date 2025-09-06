@@ -22,7 +22,7 @@
     gcc
     libtool
     libvterm
-    libsForQt5.okular
+    kdePackages.okular
     code-cursor
   ];
 

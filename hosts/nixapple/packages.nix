@@ -75,6 +75,7 @@
 
     texliveFull
     autopsy
+    sleuthkit
 
     # Terminal
     kitty  # GPU-accelerated terminal
