@@ -9,7 +9,17 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs;
+  let
+    R-with-my-packages = rWrapper.override{ 
+      packages = with rPackages; [ 
+        ggplot2 
+        dplyr 
+        xts 
+      ]; 
+      };
+  in
+  [
     alacritty
     arandr
     brave
@@ -73,7 +83,6 @@
     lsof
 
 
-    texliveFull
     autopsy
     sleuthkit
     positron-bin
@@ -123,6 +132,16 @@
     brightnessctl  # Brightness control
     pamixer        # Audio control
     playerctl      # Media control
+
+
+    texliveFull
+    pandoc
+    R-with-my-packages
+
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      pandas
+      requests
+    ]))
   ];
 
 }
